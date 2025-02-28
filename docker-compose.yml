@@ -1,0 +1,14 @@
+services:
+  db:
+    build: .
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: minhasenha
+      MYSQL_USER: meuusuario
+      MYSQL_DATABASE: meubanco
+    ports:
+      - '3306:3306'
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
